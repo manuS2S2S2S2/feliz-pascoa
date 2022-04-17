@@ -1,0 +1,329 @@
+*{
+  margin:0;
+  padding:0;
+  font-family:sans-serif;
+  box-sizing:border-box;
+}
+ol,ul,li{
+  list-style:none;
+}
+
+main{
+  width:100vw;
+  height: 100vh;
+  position:relative;
+  overflow:hidden;
+  background-color: #FFCEED;
+  display: flex;
+  flex-direction: column;
+}
+.container{
+  width:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+  position:absolute;
+  top: -90px;
+  background-color: #FFCEED;
+  
+}
+.coelhinho{
+  width: 100vw;
+  height: 10vh;
+  position: absolute;
+  bottom: 0;
+  margin-left: 50px;
+  padding-top: 1%;
+}
+.coelhinho img {
+  animation: myAnim 2s cubic-bezier(0.5, 0, 0.75, 0) 0s infinite normal both;
+  margin: 0 auto;
+}
+.heart-container {
+  animation-name: rain;
+  animation-duration: 5s;
+  animation-timing-function:linear;
+  animation-delay:5s;
+  animation-iteration-count: infinite;
+  position: relative;
+}
+.tiara{
+  position: absolute;
+}
+.tiara.right {
+  top: -13px;
+  left: 4px;
+  transform: rotate(54deg);
+}
+.tiara.left {
+  top: -14px;
+  left: -12px;
+  transform: rotate(304deg);
+}
+.heart {
+  background-color: red;
+  display: inline-block;
+  height: 15px;
+  margin: 0 5px;
+  position: relative;
+  top: 0;
+  transform: rotate(-45deg);
+  width: 15px;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: red;
+  border-radius: 50%;
+  height: 15px;
+  position: absolute;
+  width: 15px;
+  z-index: 1;
+}
+
+.heart:before {
+  top: -7px;
+  left: 0;
+}
+.left::after {
+  left: -7px;
+  top: 0;
+}
+.right::after {
+  left: 7px;
+  top: 0;
+}
+.heart {
+  animation: pulse 1s ease infinite;
+}
+
+.eu {
+  width: 330px;
+  position: fixed;
+  z-index: 5;
+}
+.eu.right {
+  top: 60%;
+  right: 20%;
+  transform: translateY(-60%);
+}
+.eu.left {
+  top: 60%;
+  left: 20%;
+  transform: translateY(-60%);
+}
+.container-presente{
+  position: fixed;
+  z-index: 7;
+  top: 44%;
+  left: 50%;
+  /* background-color: blue; */
+  width: 350px;
+  height: 200px;
+  transform: translate(-50%,-40%);
+}
+.presente{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.caixa{
+  background: #80C6A1;
+  width: 50%;
+  height: 50%;
+  border-radius: 0px 0px 5px 5px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tooltip-container{
+  position: absolute;
+  top: 0px;
+  left: 0;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip.open {
+  animation-name: tooltip;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+.tooltip.open .tooltiptext {
+  visibility: visible;
+}
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+.bezinha{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  opacity: 0;
+}
+.bezinha.open{
+  animation-name: bezinha;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+.caixa img.be{
+  position: absolute;
+  width: 150px;
+  
+}
+.caixa img.be.open{
+  z-index: 10;
+}
+.caixa img.coelho{
+  width: 150px;
+  position: absolute;
+  top: -37px;
+  transform: rotate(352deg);
+}
+.caixa img.coelho.open{
+  z-index: 9;
+}
+.cruz-caixa{
+  background-color: #E53935;
+  width:10%;
+  height: 100%;
+  position: absolute;
+}
+.tampa{
+  position: relative;
+  background: #68B589;
+  width: 60%;
+  height: 12%;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+}
+.tampa.open{
+  transform: translate(82px, -236px);
+}
+.tampa img {
+  position: absolute;
+  top: -163%;
+  width: 89px;
+  transform: rotate(52deg);
+  left: 50px;
+  z-index: 10;
+}
+.cruz-tampa{
+  background-color: #E53935;
+  width:12%;
+  height: 100%;
+}
+@keyframes rain {
+  0%{
+    transform:translateY(0);
+    opacity:0;
+  }50%{
+    opacity:1;
+  }70%{
+    opacity:1;
+  }100%{
+    transform:translateY(100vh);
+    opacity:0;
+  }
+}
+@keyframes bezinha {
+  0%{
+    transform:translateY(0);
+    opacity:0;
+  }50%{
+    opacity:0;
+  }70%{
+    opacity:1;
+  }100%{
+    transform:translateY(-25vh);
+    opacity:1;
+  }
+}
+
+@keyframes tooltip {
+  0%{
+    transform:translate(0,0);
+    opacity:0;
+  }50%{
+    opacity:0;
+  }70%{
+    opacity:1;
+  }100%{
+    transform:translate(20vh,-20vh);
+    opacity:1;
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+@keyframes myAnim {
+	0%,
+	100% {
+		transform: translateX(0%);
+		transform-origin: 50% 50%;
+	}
+
+	15% {
+		transform: translateX(-30px) rotate(6deg);
+	}
+
+	30% {
+		transform: translateX(15px) rotate(-6deg);
+	}
+
+	45% {
+		transform: translateX(-15px) rotate(3.6deg);
+	}
+
+	60% {
+		transform: translateX(9px) rotate(-2.4deg);
+	}
+
+	75% {
+		transform: translateX(-6px) rotate(1.2deg);
+	}
+}

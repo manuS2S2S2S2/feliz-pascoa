@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const heart = document.createElement('div')
     const heartContainer  = document.createElement('div')
     const tiara = document.createElement('img')
-    tiara.src = '/img/arco-de-cabelo.png'
+    tiara.src = `${window.location.href}/img/arco-de-cabelo.png`
     tiara.classList.add("tiara")
     heartContainer.classList.add('heart-container')
     heartContainer.style.animationDelay = `${getRandomInt(15)}s`

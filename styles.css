@@ -25,7 +25,6 @@ main{
   position:absolute;
   top: -90px;
   background-color: #FFCEED;
-  
 }
 .coelhinho{
   width: 100vw;
@@ -118,7 +117,6 @@ main{
   z-index: 7;
   top: 44%;
   left: 50%;
-  /* background-color: blue; */
   width: 350px;
   height: 200px;
   transform: translate(-50%,-40%);
@@ -168,7 +166,7 @@ main{
 
 .tooltip.open {
   animation-name: tooltip;
-  animation-duration: 1s;
+  animation-duration: 10s;
   animation-iteration-count: 1;
   animation-fill-mode: both;
 }
@@ -179,7 +177,7 @@ main{
   content: " ";
   position: absolute;
   top: 50%;
-  right: 100%; /* To the left of the tooltip */
+  right: 100%;
   margin-top: -5px;
   border-width: 5px;
   border-style: solid;
@@ -193,7 +191,7 @@ main{
 }
 .bezinha.open{
   animation-name: bezinha;
-  animation-duration: 1s;
+  animation-duration: 9s;
   animation-iteration-count: 1;
   animation-fill-mode: both;
 }
@@ -267,7 +265,7 @@ main{
   }50%{
     opacity:0;
   }70%{
-    opacity:1;
+    opacity:0;
   }100%{
     transform:translateY(-25vh);
     opacity:1;
@@ -281,7 +279,7 @@ main{
   }50%{
     opacity:0;
   }70%{
-    opacity:1;
+    opacity:0;
   }100%{
     transform:translate(20vh,-20vh);
     opacity:1;
